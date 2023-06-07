@@ -1,26 +1,26 @@
 {
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
+	"id": "companion-module-linux-pulseaudio",
+	"name": "companion-module-linux-pulseaudio",
+	"shortname": "pulseaudio",
+	"description": "A module to control system audio",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-linux-pulseaudio.git",
+	"bugs": "https://github.com/bitfocus/companion-module-linux-pulseaudio/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
-			"email": "Your email"
+			"name": "Alex Mitchell",
+			"email": "alex@alexmitchelltech.com"
 		}
 	],
 	"runtime": {
 		"type": "node18",
 		"api": "nodejs-ipc",
 		"apiVersion": "0.0.0",
-		"entrypoint": "../main.js"
+		"entrypoint": "../dist/index.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
+	"manufacturer": "Linux",
+	"products": ["PulseAudio"],
 	"keywords": []
 }
