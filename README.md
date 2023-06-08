@@ -1,4 +1,4 @@
-# companion-module-linux-pulseaudio
+# companion-module-pulseaudio-server
 ## A PulseAudio Companion Control Module
 
 ### Summary
