@@ -11,10 +11,12 @@ export const generateSinkInputDropdown = (
     sinkInputs: PulseAudioSinkInput[],
     id = 'sinkInputApplicationNames',
     label = 'Sink Inputs',
+    minimumSelection = 1,
 ) => ({
     id,
     type: 'multidropdown' as const,
     label,
     default: [],
+    minSelection: minimumSelection,
     choices: generateSinkInputChoices(sinkInputs),
 });

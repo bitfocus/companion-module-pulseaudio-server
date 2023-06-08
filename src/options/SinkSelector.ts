@@ -12,10 +12,12 @@ export const generateSinkDropdown = (
     availableSources: PulseAudioSink[],
     id = 'sinkIDs',
     label = 'Sinks',
+    minimumSelection = 1,
 ): CompanionInputFieldMultiDropdown => ({
     id,
     type: 'multidropdown',
     label,
     default: [],
+    minSelection: minimumSelection,
     choices: generateSinkChoices(availableSources),
 });
