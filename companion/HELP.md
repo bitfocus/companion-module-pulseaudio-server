@@ -43,3 +43,7 @@
 * Sink Inputs
   * Uses Sink Input Muted feedback with Toggle Mute Sink Input action
 
+### Limitations
+* PulseAudio Native Protocol Permissions
+  * The native protocol socket and authentication cookie is usally accessible to only the user whose window manager session is active.
+  * If the Companion daemon is being run by another system user, this module may not operate unless that user is given permissions to the socket and cookie files.

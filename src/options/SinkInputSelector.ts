@@ -2,14 +2,14 @@ import type { PulseAudioSinkInput } from '../models';
 
 export const generateSinkInputChoices = (
     sinkInputs: PulseAudioSinkInput[],
-) => sinkInputs.map(({ index, properties }) => ({
-    id: index,
-    label: properties.media.name,
+) => sinkInputs.map(({ properties: { media, application } }) => ({
+    id: application.name,
+    label: `${media.name} (${application.name})`,
 }));
 
 export const generateSinkInputDropdown = (
     sinkInputs: PulseAudioSinkInput[],
-    id = 'sinkInputIndices',
+    id = 'sinkInputApplicationNames',
     label = 'Sink Inputs',
 ) => ({
     id,

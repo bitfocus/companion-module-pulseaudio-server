@@ -1,33 +1,23 @@
 import type { PulseAudio } from 'pulseaudio.js';
 
-import type {
-    CompanionActionDefinition,
-    DropdownChoiceId,
-} from '@companion-module/base';
+import type { CompanionActionDefinition } from '@companion-module/base';
 
-import type { PulseAudioSource } from '../models';
+import type { PulseAudioSource, SourceParams } from '../models';
 import { generateSourceDropdown } from '../options';
+import { standardAction, applyToMatches } from './standardAction';
 
 const toggleMuteSources = (
     client: PulseAudio,
     sources: PulseAudioSource[],
-): CompanionActionDefinition => ({
+): CompanionActionDefinition => standardAction<SourceParams>({
     name: 'Toggle Mute State for Sources',
     options: [generateSourceDropdown(sources)],
-    callback: async ({ options }) => {
-        const sourceIDs = options.sourceIDs as DropdownChoiceId[]
-        await Promise.all(
-            sourceIDs.map((
-                sourceID: DropdownChoiceId,
-            ) => {
-                const source = sources.find(({ name }) => name === sourceID);
-                if (source) {
-                    return client.setSourceMute(!source.mute, sourceID);
-                }
-                return undefined;
-            })
-        );
-    }
+    onEvent: async ({ sourceIDs }) => applyToMatches(
+        sources,
+        ({ name }) => name,
+        sourceIDs,
+        ({ name, mute }) => client.setSourceMute(!mute, name),
+    ),
 });
 
 export default toggleMuteSources;

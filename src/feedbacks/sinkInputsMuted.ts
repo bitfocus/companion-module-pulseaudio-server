@@ -10,17 +10,19 @@ const sinkInputsMuted = (sinkInputs: PulseAudioSinkInput[]): CompanionFeedbackDe
     const sinksSelector = generateSinkInputDropdown(sinkInputs);
     return ({
         type: 'boolean',
-        name: 'Sinks Muted',
+        name: 'Sink Inputs Muted',
         defaultStyle: {
             bgcolor: combineRgb(255, 0, 0),
             color: combineRgb(255, 255, 255),
-            text: 'Output Muted',
+            text: 'App Muted',
         },
         options: [sinksSelector],
         callback: ({ options }) => {
-            const indices = options.sinkInputIndices as number[];
-            const sinks = sinkInputs.filter(({ index }) => indices.includes(index));
-            return sinks.every(({ muted }) => muted);
+            const applicationNames = options.sinkInputApplicationNames as string[];
+            const sinks = sinkInputs.filter(({
+                properties: { application },
+            }) => applicationNames.includes(application.name));
+            return sinks.length > 0 && sinks.every(({ muted }) => muted);
         }
     });
 };
