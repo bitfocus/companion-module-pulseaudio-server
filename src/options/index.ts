@@ -1,7 +1,9 @@
 import adjustmentPercentageOption from './AdjustmentPercentage';
 import muteStateOption from './MuteState';
+import activeStateOption from './ActiveState';
 
 export {
+    activeStateOption,
     adjustmentPercentageOption,
     muteStateOption,
 };

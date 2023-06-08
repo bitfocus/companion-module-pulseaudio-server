@@ -25,27 +25,45 @@ const sinkInputMutePreset: CompanionButtonPresetDefinition = {
         }],
         up: [],
     }],
-    feedbacks: [{
-        feedbackId: FEEDBACK_ID_SINK_INPUTS_ACTIVE,
-        options: {
-            sinkInputApplicationNames: [],
+    feedbacks: [
+        // If Input is Active
+        {
+            feedbackId: FEEDBACK_ID_SINK_INPUTS_ACTIVE,
+            options: {
+                sinkInputApplicationNames: [],
+                activeState: true,
+            },
+            style: {
+                text: '',
+                bgcolor: combineRgb(0, 0, 0),
+            },
         },
-        style: {
-            text: '',
-            bgcolor: combineRgb(0, 0, 0),
+        // If Input is Muted
+        {
+            feedbackId: FEEDBACK_ID_SINK_INPUTS_MUTED,
+            options: {
+                sinkInputApplicationNames: [],
+                muteState: true,
+            },
+            style: {
+                bgcolor: combineRgb(255, 0, 0),
+                color: combineRgb(255, 255, 255),
+                text: 'App Muted',
+                size: '18',
+            }
         },
-    }, {
-        feedbackId: FEEDBACK_ID_SINK_INPUTS_MUTED,
-        options: {
-            sinkInputApplicationNames: [],
-        },
-        style: {
-            bgcolor: combineRgb(255, 0, 0),
-            color: combineRgb(255, 255, 255),
-            text: 'App Muted',
-            size: '18',
-        }
-    }],
+        // If input is not active
+        {
+            feedbackId: FEEDBACK_ID_SINK_INPUTS_ACTIVE,
+            options: {
+                sinkInputApplicationNames: [],
+                activeState: false,
+            },
+            style: {
+                text: '',
+                bgcolor: combineRgb(0, 0, 0),
+            },
+        }],
 };
 
 export default sinkInputMutePreset;
