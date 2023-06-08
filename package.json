@@ -1,5 +1,5 @@
 {
-  "name": "companion-module-linux-pulseaudio",
+  "name": "companion-module-pulseaudio-server",
   "version": "0.9.0",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitfocus/companion-module-linux-pulseaudio.git"
+    "url": "git+https://github.com/bitfocus/companion-module-pulseaudio-server.git"
   },
   "dependencies": {
     "@companion-module/base": "~1.4.0",

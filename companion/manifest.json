@@ -1,12 +1,12 @@
 {
-  "id": "companion-module-linux-pulseaudio",
-  "name": "companion-module-linux-pulseaudio",
-  "shortname": "pulseaudio",
+  "id": "companion-module-pulseaudio-server",
+  "name": "companion-module-pulseaudio-server",
+  "shortname": "PulseAudio",
   "description": "A module to control system audio",
   "version": "0.9.0",
   "license": "MIT",
-  "repository": "git+https://github.com/bitfocus/companion-module-linux-pulseaudio.git",
-  "bugs": "https://github.com/bitfocus/companion-module-linux-pulseaudio/issues",
+  "repository": "git+https://github.com/bitfocus/companion-module-pulseaudio-server.git",
+  "bugs": "https://github.com/bitfocus/companion-module-pulseaudio-server/issues",
   "maintainers": [
     {
       "name": "Alex Mitchell",
@@ -20,9 +20,12 @@
     "entrypoint": "../dist/index.js"
   },
   "legacyIds": [],
-  "manufacturer": "Linux",
+  "manufacturer": "PulseAudio",
   "products": [
-    "PulseAudio"
+    "Server"
   ],
-  "keywords": []
+    "keywords": [
+	"PulseAudio",
+	"pavucontrol"
+    ]
 }
