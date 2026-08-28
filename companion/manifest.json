@@ -1,6 +1,6 @@
 {
-  "id": "companion-module-pulseaudio-server",
-  "name": "companion-module-pulseaudio-server",
+  "id": "pulseaudio-server",
+  "name": "pulseaudio-server",
   "shortname": "PulseAudio",
   "description": "A module to control system audio",
   "version": "0.9.0",
